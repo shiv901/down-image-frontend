@@ -1,0 +1,15 @@
+services:
+  down-image-db:
+    image: postgres
+    restart: always
+    container_name: down-image-db
+    ports: 
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+      PGDATA: /data/postgres
+    volumes:
+      - posgres:/data/posgres
+
+volumes:
+  posgres:
